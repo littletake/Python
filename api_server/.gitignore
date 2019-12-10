@@ -5,3 +5,5 @@ service/error.py
 service/sender.py
 service/test.py
 service/testtest.py
+.idea
+__pycache__/

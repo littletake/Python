@@ -1,0 +1,50 @@
+==== 正常パターンチェック ===
+
+==== GET /posts リクエストチェック ===
+レスポンスの詳細 :  {"posts": [{"id": "5b24b65b-f673-4396-bc19-c4878953f139", "user_id": "11111111-1111-1111-1111-111111111111", "text": "aaa", "parent_post_id": "", "comment_count": 0, "posted_at": "2019-12-10 19:48:47"}, {"id": "f2bde159-0a0f-48e6-9a72-e6dc2036c2bd", "user_id": "11111111-1111-1111-1111-111111111111", "text": "bbb", "parent_post_id": "5b24b65b-f673-4396-bc19-c4878953f139", "comment_count": 1, "posted_at": "2019-12-10 19:49:39"}]}
+成功
+
+==== GET /posts/:post_id/comments リクエストチェック ===
+レスポンスの詳細 :  {"comments": []}
+成功
+
+==== POST /posts/create リクエストチェック ===
+レスポンスの詳細 :  {"result": "OK"}
+成功
+
+==== POST /posts/:post_id/comments/create リクエストチェック ===
+レスポンスの詳細 :  {"result": "OK"}
+成功
+
+==== 非正常パターンのチェック ===
+
+==== POST /posts/create テキストの長さが0 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u6587\u5b57\u6570\u306f1\u6587\u5b57\u4ee5\u4e0a100\u6587\u5b57\u4ee5\u4e0b\u3067\u3059"}
+成功
+
+==== POST /posts/create テキストの長さが101 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u6587\u5b57\u6570\u306f1\u6587\u5b57\u4ee5\u4e0a100\u6587\u5b57\u4ee5\u4e0b\u3067\u3059"}
+成功
+
+==== POST /posts/create 存在しないuser_idを指定 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u767b\u9332\u30e6\u30fc\u30b6\u30fc\u3067\u306f\u3042\u308a\u307e\u305b\u3093"}
+成功
+
+==== POST /posts/:post_id/comments/create テキストの長さが0 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u6587\u5b57\u6570\u306f1\u6587\u5b57\u4ee5\u4e0a100\u6587\u5b57\u4ee5\u4e0b\u3067\u3059"}
+成功
+
+==== POST /posts/:post_id/comments/create テキストの長さが101 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u6587\u5b57\u6570\u306f1\u6587\u5b57\u4ee5\u4e0a100\u6587\u5b57\u4ee5\u4e0b\u3067\u3059"}
+成功
+
+==== POST /posts/:post_id/comments/create 存在しないuser_idを指定 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u767b\u9332\u30e6\u30fc\u30b6\u30fc\u3067\u306f\u3042\u308a\u307e\u305b\u3093"}
+成功
+
+==== POST /posts/:post_id/comments/create 存在しないpost_idを指定 ===
+レスポンスの詳細 :  {"result": "NG", "message": "\u30b3\u30e1\u30f3\u30c8\u5148\u306e\u6295\u7a3f\u304c\u898b\u5f53\u305f\u308a\u307e\u305b\u3093"}
+成功
+
+チェックをパスした数: 11/11
+全てのチェックに成功しました.
