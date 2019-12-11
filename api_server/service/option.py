@@ -36,21 +36,6 @@ def create_comment(request_dic, parent_id):
     }
     return new_comment
 
-    # DBに保存
-    # できないから、適当なファイルに保存
-    # try:
-    #     with open(file_path, mode='a') as f:
-    #         f.write(str(new_post))
-    # except IOError:
-    #     return {
-    #         "result": "NG",
-    #         "message": file_path + "cannot be open"
-    #     }
-    # else:
-    #     return {
-    #         "result": "OK",
-    #     }
-
 
 def change_count(post_list, parent_id):
     for post in post_list:
@@ -78,10 +63,3 @@ if __name__ == '__main__':
 
     change_count(sample_list, '6db30546-01b0-409d-bb72-99132ad42da8')
     print(sample_list)
-
-    # filepath = os.getcwd() + "/" + "test.txt"
-    # json = {
-    #     "user_id": 1,
-    #     "text": "hello2"
-    # }
-    # create_post(json, filepath)

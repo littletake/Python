@@ -78,16 +78,7 @@ def show_posts():
     response = HTTPResponse(status=200, body=body)
     response.set_header('Content-Type', 'application/json')
     return response
-    # try:
-    #     with open(FILEPATH, mode='r') as all_posts:
-    #         all_posts.read()
-    # except IOError:
-    #     return {
-    #         "result": "NG",
-    #         "message": FILEPATH + "cannot be open"
-    #     }
-    # else:
-    #     return str(all_posts)
+
 
 # 新規投稿作成
 @route("/posts/create", method="POST")
